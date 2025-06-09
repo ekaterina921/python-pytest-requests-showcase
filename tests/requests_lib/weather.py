@@ -2,17 +2,18 @@ import requests
 
 
 class City:
-    def __init__(self, name, lat, lon, units="metric"):
+    def __init__(self, name, lat, lon, your_token, units="metric"):
         self.name = name
         self.lat = lat
         self.lon = lon
         self.units = units
+        self.your_token = your_token
         self.get_data()
 
     def get_data(self):
         try:
             response = requests.get(
-                f"https://api.openweathermap.org/data/2.5/weather?units={self.units}&lat={self.lat}&lon={self.lon}&appid=89b1aba9d283747f9227300fc11209a0")
+                f"https://api.openweathermap.org/data/2.5/weather?units={self.units}&lat={self.lat}&lon={self.lon}&appid={self.your_token}")
 
         except ConnectionError as c:
             print("There's no internet access")
@@ -34,9 +35,9 @@ class City:
         print(f"Today's low: {self.temp_min} {units_to_print}")
 
 
-my_city = City("Chicago", 41.881832, -87.623177)
+my_city = City("Chicago", 41.881832, -87.623177, your_token)
 my_city.temp_print()
 
-vacation_city = City("New York", 40.730610, -73.935242)
+vacation_city = City("New York", 40.730610, -73.935242, your_token)
 vacation_city.temp_print()
 
