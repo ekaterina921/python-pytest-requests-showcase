@@ -3,8 +3,8 @@ import source.my_functions as my_functions
 import time
 
 def test_add():
-    result = my_functions.add(1, 4)
-    assert result == 5
+    result = my_functions.add(2, 4)
+    assert result == 6
 
 
 def test_add_strings():
