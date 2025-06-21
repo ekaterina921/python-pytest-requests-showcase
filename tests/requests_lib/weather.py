@@ -35,9 +35,9 @@ class City:
         print(f"Today's low: {self.temp_min} {units_to_print}")
 
 
-my_city = City("Chicago", 41.881832, -87.623177, your_token)
+my_city = City("Chicago", 41.881832, -87.623177, "addyour_token123")
 my_city.temp_print()
 
-vacation_city = City("New York", 40.730610, -73.935242, your_token)
+vacation_city = City("New York", 40.730610, -73.935242, "addyour_token123")
 vacation_city.temp_print()
 
